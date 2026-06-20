@@ -31,7 +31,18 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(duration);
         forwardSpeed = originalForwardSpeed;
     }
+    public void ActivateSlowdown(float slowSpeed, float duration)
+        {
+            StartCoroutine(SlowdownRoutine(slowSpeed, duration));
+        }
 
+        private IEnumerator SlowdownRoutine(float slowSpeed, float duration)
+        {
+            forwardSpeed = slowSpeed;
+            yield return new WaitForSeconds(duration);
+            forwardSpeed = originalForwardSpeed;
+        }
+        
     void OnMove(InputValue value)
     {
         moveInput = value.Get<Vector2>();

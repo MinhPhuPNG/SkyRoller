@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class SpeedBoostZone : MonoBehaviour
 {
-    float boostSpeed = 15f;
+    float boostSpeed = 20f;
     float boostDuration = 2f;
 
     private void OnTriggerEnter(Collider collider)
